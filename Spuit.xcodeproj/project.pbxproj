@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D434B1DA26F8C9F000A12146 /* PrefsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434B1D926F8C9F000A12146 /* PrefsVC.swift */; };
+		D434B1DD26F8D64800A12146 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D434B1DC26F8D64800A12146 /* SnapKit */; };
+		D434B1EA26F9025600A12146 /* DSFToggleButton in Frameworks */ = {isa = PBXBuildFile; productRef = D434B1E926F9025600A12146 /* DSFToggleButton */; };
+		D434B1EE26F91F0800A12146 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = D434B1ED26F91F0800A12146 /* Defaults */; };
+		D4A0DB7E26F3D68000F1C370 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D4A0DB7D26F3D68000F1C370 /* db.sqlite */; };
+		D4A0DBB126F3F11500F1C370 /* DSFColorSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A0DBB026F3F11500F1C370 /* DSFColorSampler.swift */; };
+		D4C0A20226F430A5004A1692 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C0A20126F430A5004A1692 /* DBManager.swift */; };
+		D4C0A20626F43172004A1692 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C0A20526F43172004A1692 /* ColorExtension.swift */; };
+		D4C0A20A26F4390A004A1692 /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C0A20926F4390A004A1692 /* UIExtension.swift */; };
+		D4C0A21126F44C92004A1692 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C0A21026F44C92004A1692 /* main.swift */; };
+		D4C0A21D26F44F29004A1692 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D4C0A21C26F44F29004A1692 /* LaunchAtLogin */; };
+		D4E39BC326F3A00E009C8813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E39BC226F3A00E009C8813 /* AppDelegate.swift */; };
+		D4E39BC726F3A00F009C8813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4E39BC626F3A00F009C8813 /* Assets.xcassets */; };
+		D4E39BDB26F3A199009C8813 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = D4E39BDA26F3A199009C8813 /* SQLite */; };
+		D4E7571626F80362006BFF6D /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = D4E7571526F80362006BFF6D /* Preferences */; };
+		D4FD437726F4512200085E79 /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = D4FD437626F4512200085E79 /* KeyboardShortcuts */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D434B1E726F9020C00A12146 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D434B1D926F8C9F000A12146 /* PrefsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsVC.swift; sourceTree = "<group>"; };
+		D4A0DB7D26F3D68000F1C370 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		D4A0DBB026F3F11500F1C370 /* DSFColorSampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSFColorSampler.swift; sourceTree = "<group>"; };
+		D4C0A20126F430A5004A1692 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		D4C0A20526F43172004A1692 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		D4C0A20926F4390A004A1692 /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
+		D4C0A21026F44C92004A1692 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		D4E39BBF26F3A00E009C8813 /* Spuit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spuit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4E39BC226F3A00E009C8813 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D4E39BC626F3A00F009C8813 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4E39BCB26F3A00F009C8813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4E39BCC26F3A00F009C8813 /* Spuit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spuit.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4E39BBC26F3A00E009C8813 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4C0A21D26F44F29004A1692 /* LaunchAtLogin in Frameworks */,
+				D4E7571626F80362006BFF6D /* Preferences in Frameworks */,
+				D4E39BDB26F3A199009C8813 /* SQLite in Frameworks */,
+				D4FD437726F4512200085E79 /* KeyboardShortcuts in Frameworks */,
+				D434B1EA26F9025600A12146 /* DSFToggleButton in Frameworks */,
+				D434B1DD26F8D64800A12146 /* SnapKit in Frameworks */,
+				D434B1EE26F91F0800A12146 /* Defaults in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D434B1D826F8C9E000A12146 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				D434B1D926F8C9F000A12146 /* PrefsVC.swift */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		D4C0A1FB26F42E7D004A1692 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D4C0A20526F43172004A1692 /* ColorExtension.swift */,
+				D4C0A20926F4390A004A1692 /* UIExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D4C0A1FE26F42F1D004A1692 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				D4A0DBB026F3F11500F1C370 /* DSFColorSampler.swift */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		D4C0A20026F4309C004A1692 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D4C0A20126F430A5004A1692 /* DBManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D4E39BB626F3A00E009C8813 = {
+			isa = PBXGroup;
+			children = (
+				D4E39BC126F3A00E009C8813 /* Spuit */,
+				D4E39BC026F3A00E009C8813 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4E39BC026F3A00E009C8813 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4E39BBF26F3A00E009C8813 /* Spuit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4E39BC126F3A00E009C8813 /* Spuit */ = {
+			isa = PBXGroup;
+			children = (
+				D4C0A21026F44C92004A1692 /* main.swift */,
+				D4E39BC226F3A00E009C8813 /* AppDelegate.swift */,
+				D4C0A20026F4309C004A1692 /* Managers */,
+				D4C0A1FE26F42F1D004A1692 /* Libs */,
+				D4C0A1FB26F42E7D004A1692 /* Extensions */,
+				D434B1D826F8C9E000A12146 /* VCs */,
+				D4E39BC626F3A00F009C8813 /* Assets.xcassets */,
+				D4E39BCB26F3A00F009C8813 /* Info.plist */,
+				D4A0DB7D26F3D68000F1C370 /* db.sqlite */,
+				D4E39BCC26F3A00F009C8813 /* Spuit.entitlements */,
+			);
+			path = Spuit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4E39BBE26F3A00E009C8813 /* Spuit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4E39BCF26F3A00F009C8813 /* Build configuration list for PBXNativeTarget "Spuit" */;
+			buildPhases = (
+				D4E39BBB26F3A00E009C8813 /* Sources */,
+				D4E39BBC26F3A00E009C8813 /* Frameworks */,
+				D4E39BBD26F3A00E009C8813 /* Resources */,
+				D434B1E726F9020C00A12146 /* Embed Frameworks */,
+				D434B1EB26F9052600A12146 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spuit;
+			packageProductDependencies = (
+				D4E39BDA26F3A199009C8813 /* SQLite */,
+				D4C0A21C26F44F29004A1692 /* LaunchAtLogin */,
+				D4FD437626F4512200085E79 /* KeyboardShortcuts */,
+				D4E7571526F80362006BFF6D /* Preferences */,
+				D434B1DC26F8D64800A12146 /* SnapKit */,
+				D434B1E926F9025600A12146 /* DSFToggleButton */,
+				D434B1ED26F91F0800A12146 /* Defaults */,
+			);
+			productName = Spuit;
+			productReference = D4E39BBF26F3A00E009C8813 /* Spuit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4E39BB726F3A00E009C8813 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					D4E39BBE26F3A00E009C8813 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = D4E39BBA26F3A00E009C8813 /* Build configuration list for PBXProject "Spuit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				de,
+				"zh-Hans",
+				ru,
+			);
+			mainGroup = D4E39BB626F3A00E009C8813;
+			packageReferences = (
+				D4E39BD926F3A199009C8813 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+				D4C0A21B26F44F29004A1692 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				D4FD437526F4512200085E79 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+				D4E7571426F80362006BFF6D /* XCRemoteSwiftPackageReference "Preferences" */,
+				D434B1DB26F8D64800A12146 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D434B1E826F9025600A12146 /* XCRemoteSwiftPackageReference "DSFToggleButton" */,
+				D434B1EC26F91F0800A12146 /* XCRemoteSwiftPackageReference "Defaults" */,
+			);
+			productRefGroup = D4E39BC026F3A00E009C8813 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4E39BBE26F3A00E009C8813 /* Spuit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4E39BBD26F3A00E009C8813 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4E39BC726F3A00F009C8813 /* Assets.xcassets in Resources */,
+				D4A0DB7E26F3D68000F1C370 /* db.sqlite in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D434B1EB26F9052600A12146 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4E39BBB26F3A00E009C8813 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D434B1DA26F8C9F000A12146 /* PrefsVC.swift in Sources */,
+				D4C0A21126F44C92004A1692 /* main.swift in Sources */,
+				D4C0A20A26F4390A004A1692 /* UIExtension.swift in Sources */,
+				D4A0DBB126F3F11500F1C370 /* DSFColorSampler.swift in Sources */,
+				D4E39BC326F3A00E009C8813 /* AppDelegate.swift in Sources */,
+				D4C0A20226F430A5004A1692 /* DBManager.swift in Sources */,
+				D4C0A20626F43172004A1692 /* ColorExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D4E39BCD26F3A00F009C8813 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D4E39BCE26F3A00F009C8813 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		D4E39BD026F3A00F009C8813 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Spuit/Spuit.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NQY56MJN7G;
+				ENABLE_HARDENED_RUNTIME = YES;
+				EXCLUDED_ARCHS = arm64;
+				INFOPLIST_FILE = Spuit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.spuit.Spuit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D4E39BD126F3A00F009C8813 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Spuit/Spuit.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NQY56MJN7G;
+				ENABLE_HARDENED_RUNTIME = YES;
+				EXCLUDED_ARCHS = arm64;
+				INFOPLIST_FILE = Spuit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.spuit.Spuit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4E39BBA26F3A00E009C8813 /* Build configuration list for PBXProject "Spuit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4E39BCD26F3A00F009C8813 /* Debug */,
+				D4E39BCE26F3A00F009C8813 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4E39BCF26F3A00F009C8813 /* Build configuration list for PBXNativeTarget "Spuit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4E39BD026F3A00F009C8813 /* Debug */,
+				D4E39BD126F3A00F009C8813 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D434B1DB26F8D64800A12146 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.1;
+			};
+		};
+		D434B1E826F9025600A12146 /* XCRemoteSwiftPackageReference "DSFToggleButton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dagronf/DSFToggleButton.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.1.0;
+			};
+		};
+		D434B1EC26F91F0800A12146 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
+		D4C0A21B26F44F29004A1692 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+		D4E39BD926F3A199009C8813 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.13.0;
+			};
+		};
+		D4E7571426F80362006BFF6D /* XCRemoteSwiftPackageReference "Preferences" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Preferences";
+			requirement = {
+				kind = exactVersion;
+				version = 2.5.0;
+			};
+		};
+		D4FD437526F4512200085E79 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = exactVersion;
+				version = 1.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D434B1DC26F8D64800A12146 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D434B1DB26F8D64800A12146 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		D434B1E926F9025600A12146 /* DSFToggleButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D434B1E826F9025600A12146 /* XCRemoteSwiftPackageReference "DSFToggleButton" */;
+			productName = DSFToggleButton;
+		};
+		D434B1ED26F91F0800A12146 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D434B1EC26F91F0800A12146 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
+		D4C0A21C26F44F29004A1692 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4C0A21B26F44F29004A1692 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
+		D4E39BDA26F3A199009C8813 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4E39BD926F3A199009C8813 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+		D4E7571526F80362006BFF6D /* Preferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4E7571426F80362006BFF6D /* XCRemoteSwiftPackageReference "Preferences" */;
+			productName = Preferences;
+		};
+		D4FD437626F4512200085E79 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4FD437526F4512200085E79 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D4E39BB726F3A00E009C8813 /* Project object */;
+}
