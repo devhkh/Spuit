@@ -33,16 +33,32 @@ enum Formats: Int, CaseIterable, Defaults.Serializable {
     }
 }
 
-extension Defaults.Keys {
-    static let selectedFormat = Key<Formats>("Formats", default: .swift_UIColor)
-}
-
-enum Histories: Int, CaseIterable {
+enum Histories: Int, CaseIterable, Defaults.Serializable {
     case ten = 10
     case twenty = 20
     case thirty = 30
     case forty = 40
     case fifty = 50
+    
+    var string: String {
+        switch self {
+        case .ten:
+            return "10"
+        case .twenty:
+            return "20"
+        case .thirty:
+            return "30"
+        case .forty:
+            return "40"
+        case .fifty:
+            return "50"
+        }
+    }
+}
+
+extension Defaults.Keys {
+    static let selectedFormat = Key<Formats>("Formats", default: .swift_UIColor)
+    static let selectedHistorySize = Key<Histories>("HistorySizes", default: .ten)
 }
 
 extension Preferences.PaneIdentifier {
@@ -98,7 +114,7 @@ class PrefsVC: NSViewController, PreferencePane {
         return v
     }()
     
-    lazy var historyButton: NSPopUpButton = {
+    lazy var historiesButton: NSPopUpButton = {
         let v = NSPopUpButton()
         v.pullsDown = true
         for value in Histories.allCases {
@@ -170,7 +186,7 @@ class PrefsVC: NSViewController, PreferencePane {
         
         view.addSubview(historyTitle)
         view.addSubview(historyDesc)
-        view.addSubview(historyButton)
+        view.addSubview(historiesButton)
         
         view.addSubview(formatsTitle)
         view.addSubview(formatsDesc)
@@ -206,7 +222,7 @@ class PrefsVC: NSViewController, PreferencePane {
             make.left.equalTo(behaviorTitle)
         }
         
-        historyButton.snp.makeConstraints { make in
+        historiesButton.snp.makeConstraints { make in
             make.top.equalTo(historyDesc)
             make.right.equalTo(view.snp.right).offset(-20)
         }
@@ -248,6 +264,9 @@ class PrefsVC: NSViewController, PreferencePane {
         
         formatsButton.target = self
         formatsButton.action = #selector(formatButtonPressed(button:))
+        
+        historiesButton.target = self
+        historiesButton.action = #selector(historyButtonPressed(button:))
     }
     
     @objc func launchAtLoginPressed(button: DSFToggleButton) {
@@ -273,6 +292,28 @@ class PrefsVC: NSViewController, PreferencePane {
                 }
             }
             Defaults[.selectedFormat] = selectedFormat
+        }
+    }
+    
+    @objc func historyButtonPressed(button: NSPopUpButton) {
+        var selectedHistory: Histories? = nil
+        if let item = historiesButton.selectedItem {
+            for history in Histories.allCases {
+                if history.string == item.title {
+                    selectedHistory = history 
+                }
+            }
+        }
+        historiesButton.removeAllItems()
+        if let selectedHistory = selectedHistory {
+            historiesButton.title = selectedHistory.string
+            historiesButton.addItem(withTitle: selectedHistory.string)
+            for format in Histories.allCases {
+                if format.string != selectedHistory.string {
+                    historiesButton.addItem(withTitle: format.string)
+                }
+            }
+            Defaults[.selectedHistorySize] = selectedHistory
         }
     }
     
