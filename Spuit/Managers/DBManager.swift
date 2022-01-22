@@ -31,11 +31,23 @@ class DBManager: NSObject {
         let decVal = UInt64(strtoul(color.hexString, nil, 16))
         var colorName: String = "none"
         do {
-            for row in try db.prepare("SELECT name from colorNames where dec <= \(decVal) order by dec desc limit 1") {
+            let query = "SELECT name FROM colorNames WHERE dec = \(decVal) ORDER BY dec DESC limit 1"
+            for row in try db.prepare(query) {
                 if let row = row[0] {
                     colorName = String(describing: row)
                 }
             }
+            if colorName == "none" {
+                let query2 = "SELECT name, dec, ABS(dec-'\(decVal)') AS dec FROM colorNames ORDER BY dec DESC limit 1"
+                for row in try db.prepare(query2) {
+                    if let row = row[0] {
+                        colorName = String(describing: row)
+                    }
+                }
+            }
+            print("color.hexString : \(color.hexString)")
+            print("decVal : \(decVal)")
+            print("colorName : \(colorName)")
             return (colorName)
             
         } catch {

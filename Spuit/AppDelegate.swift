@@ -26,6 +26,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     let historyMenu = NSMenu(title: "History")
     
+    let popover: NSPopover = {
+        let p = NSPopover()
+        p.behavior = .transient
+        p.animates = false
+        return p
+    }()
+    var popoverTimer: Timer? = nil
+    var isShowingPopover: Bool = false
+    
     private lazy var preferencesWindowController = PreferencesWindowController(
         preferencePanes: [
             PrefsVC(),
@@ -76,6 +85,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let g = String(format: "%.2f", c.greenComponent)
             let b = String(format: "%.2f", c.blueComponent)
             let a = String(format: "%.2f", c.alphaComponent)
+            
             self.addColor(colorName: colorName, r: r, g: g, b: b, a: a, isAddHistory: true)
         }
     }
@@ -101,6 +111,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             DBManager.SI.addHistoryColor(colorName: colorName, r: r, g: g, b: b, a: a, formatType: format.rawValue)
             self.getHistory()
         }
+        
+        self.showPopover(colorName: cName)
+    }
+    
+    func showPopover(colorName: String) {
+        self.popover.animates = false
+        self.popover.close()
+        self.popoverTimer?.invalidate()
+        self.popoverTimer = nil
+        
+        let colorVC: ColorVC = ColorVC()
+        colorVC.colorName = colorName
+        colorVC.colorFormat = Defaults[.selectedFormat]
+        popover.contentViewController = colorVC
+        popover.show(relativeTo: statusItem.button!.bounds, of: statusItem.button!, preferredEdge: .minY)
+        popoverTimer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { timer in
+            self.popoverTimer?.invalidate()
+            self.popoverTimer = nil
+            self.popover.animates = true
+            self.popover.close()
+        }
     }
     
     @objc func getHistory() {
@@ -117,7 +148,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         do {
             for historyColor in try DBManager.SI.db.prepare(historyColors) {
                 let item = NSMenuItem()
-                let format = Formats.init(rawValue: historyColor[formatType])!
+                let format = ColorFormat.init(rawValue: historyColor[formatType])!
                 switch format {
                 case .swift_UIColor:
                     item.image = NSImage(named: "icn_ios")

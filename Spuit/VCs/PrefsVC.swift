@@ -13,7 +13,7 @@ import DSFToggleButton
 import KeyboardShortcuts
 import Defaults
 
-enum Formats: Int, CaseIterable, Defaults.Serializable {
+enum ColorFormat: Int, CaseIterable, Defaults.Serializable {
     case swift_UIColor = 0
     case swift_NSColor
 //    case objc_UIColor
@@ -33,7 +33,7 @@ enum Formats: Int, CaseIterable, Defaults.Serializable {
     }
 }
 
-enum Histories: Int, CaseIterable, Defaults.Serializable {
+enum ColorHistorySize: Int, CaseIterable, Defaults.Serializable {
     case ten = 10
     case twenty = 20
     case thirty = 30
@@ -57,8 +57,8 @@ enum Histories: Int, CaseIterable, Defaults.Serializable {
 }
 
 extension Defaults.Keys {
-    static let selectedFormat = Key<Formats>("Formats", default: .swift_UIColor)
-    static let selectedHistorySize = Key<Histories>("HistorySizes", default: .ten)
+    static let selectedFormat = Key<ColorFormat>("ColorFormat", default: .swift_UIColor)
+    static let selectedHistorySize = Key<ColorHistorySize>("ColorHistorySize", default: .ten)
 }
 
 extension Preferences.PaneIdentifier {
@@ -117,7 +117,7 @@ class PrefsVC: NSViewController, PreferencePane {
     lazy var historiesButton: NSPopUpButton = {
         let v = NSPopUpButton()
         v.pullsDown = true
-        for value in Histories.allCases {
+        for value in ColorHistorySize.allCases {
             v.addItem(withTitle: String(value.rawValue))
         }
         return v
@@ -126,7 +126,7 @@ class PrefsVC: NSViewController, PreferencePane {
     lazy var formatsTitle: NSLabel = {
         let v = NSLabel()
         v.font = NSFont.boldSystemFont(ofSize: 14)
-        v.stringValue = "Formats"
+        v.stringValue = "ColorFormat"
         v.textColor = .black
         return v
     }()
@@ -145,7 +145,7 @@ class PrefsVC: NSViewController, PreferencePane {
         let selectedFormat = Defaults[.selectedFormat]
         v.title = selectedFormat.string
         v.addItem(withTitle: selectedFormat.string)
-        for format in Formats.allCases {
+        for format in ColorFormat.allCases {
             if format.string != selectedFormat.string {
                 v.addItem(withTitle: format.string)
             }
@@ -274,9 +274,9 @@ class PrefsVC: NSViewController, PreferencePane {
     }
     
     @objc func formatButtonPressed(button: NSPopUpButton) {
-        var selectedFormat: Formats? = nil
+        var selectedFormat: ColorFormat? = nil
         if let item = formatsButton.selectedItem {
-            for format in Formats.allCases {
+            for format in ColorFormat.allCases {
                 if format.string == item.title {
                     selectedFormat = format
                 }
@@ -286,7 +286,7 @@ class PrefsVC: NSViewController, PreferencePane {
         if let selectedFormat = selectedFormat {
             formatsButton.title = selectedFormat.string
             formatsButton.addItem(withTitle: selectedFormat.string)
-            for format in Formats.allCases {
+            for format in ColorFormat.allCases {
                 if format.string != selectedFormat.string {
                     formatsButton.addItem(withTitle: format.string)
                 }
@@ -296,9 +296,9 @@ class PrefsVC: NSViewController, PreferencePane {
     }
     
     @objc func historyButtonPressed(button: NSPopUpButton) {
-        var selectedHistory: Histories? = nil
+        var selectedHistory: ColorHistorySize? = nil
         if let item = historiesButton.selectedItem {
-            for history in Histories.allCases {
+            for history in ColorHistorySize.allCases {
                 if history.string == item.title {
                     selectedHistory = history 
                 }
@@ -308,7 +308,7 @@ class PrefsVC: NSViewController, PreferencePane {
         if let selectedHistory = selectedHistory {
             historiesButton.title = selectedHistory.string
             historiesButton.addItem(withTitle: selectedHistory.string)
-            for format in Histories.allCases {
+            for format in ColorHistorySize.allCases {
                 if format.string != selectedHistory.string {
                     historiesButton.addItem(withTitle: format.string)
                 }

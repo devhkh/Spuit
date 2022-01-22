@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D42732C0277A0FD600D68925 /* ColorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42732BF277A0FD600D68925 /* ColorVC.swift */; };
+		D42732C2277A163200D68925 /* NSExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42732C1277A163200D68925 /* NSExtension.swift */; };
 		D434B1DA26F8C9F000A12146 /* PrefsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434B1D926F8C9F000A12146 /* PrefsVC.swift */; };
 		D434B1DD26F8D64800A12146 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D434B1DC26F8D64800A12146 /* SnapKit */; };
 		D434B1EA26F9025600A12146 /* DSFToggleButton in Frameworks */ = {isa = PBXBuildFile; productRef = D434B1E926F9025600A12146 /* DSFToggleButton */; };
@@ -39,6 +41,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D42732BF277A0FD600D68925 /* ColorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorVC.swift; sourceTree = "<group>"; };
+		D42732C1277A163200D68925 /* NSExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExtension.swift; sourceTree = "<group>"; };
 		D434B1D926F8C9F000A12146 /* PrefsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsVC.swift; sourceTree = "<group>"; };
 		D4A0DB7D26F3D68000F1C370 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		D4A0DBB026F3F11500F1C370 /* DSFColorSampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSFColorSampler.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				D434B1D926F8C9F000A12146 /* PrefsVC.swift */,
+				D42732BF277A0FD600D68925 /* ColorVC.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -84,6 +89,7 @@
 			children = (
 				D4C0A20526F43172004A1692 /* ColorExtension.swift */,
 				D4C0A20926F4390A004A1692 /* UIExtension.swift */,
+				D42732C1277A163200D68925 /* NSExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -246,6 +252,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D42732C0277A0FD600D68925 /* ColorVC.swift in Sources */,
+				D42732C2277A163200D68925 /* NSExtension.swift in Sources */,
 				D434B1DA26F8C9F000A12146 /* PrefsVC.swift in Sources */,
 				D4C0A21126F44C92004A1692 /* main.swift in Sources */,
 				D4C0A20A26F4390A004A1692 /* UIExtension.swift in Sources */,
