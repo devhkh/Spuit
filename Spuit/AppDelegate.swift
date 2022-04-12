@@ -99,7 +99,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         case .swift_NSColor:
             codeString = "@nonobjc class var \(cName): NSColor { return NSColor(red: \(r), green: \(g), blue:\(b), alpha: \(a)) }"
         case .swift_UIColor:
-            codeString = "@nonobjc class var \(cName): NSColor { return UIColor(red: \(r), green: \(g), blue:\(b), alpha: \(a)) }"
+            codeString = "@nonobjc class var \(cName): UIColor { return UIColor(red: \(r), green: \(g), blue:\(b), alpha: \(a)) }"
         }
         
         let pasteBoard = NSPasteboard.general
