@@ -31,15 +31,25 @@ class DBManager: NSObject {
         let decVal = UInt64(strtoul(color.hexString, nil, 16))
         var colorName: String = "none"
         do {
-            let query = "SELECT name FROM colorNames WHERE dec = \(decVal) ORDER BY dec DESC limit 1"
-            for row in try db.prepare(query) {
+            let query1 = "SELECT name FROM colorNames WHERE hexColor = '\(color.hexString)' ORDER BY dec DESC limit 1"
+            for row in try db.prepare(query1) {
                 if let row = row[0] {
                     colorName = String(describing: row)
                 }
             }
+            
             if colorName == "none" {
-                let query2 = "SELECT name, dec, ABS(dec-'\(decVal)') AS dec FROM colorNames ORDER BY dec DESC limit 1"
+                let query2 = "SELECT name FROM colorNames WHERE dec = \(decVal) ORDER BY dec DESC limit 1"
                 for row in try db.prepare(query2) {
+                    if let row = row[0] {
+                        colorName = String(describing: row)
+                    }
+                }
+            }
+            
+            if colorName == "none" {
+                let query3 = "SELECT name, dec, ABS(dec-\(decVal)) AS dec FROM colorNames ORDER BY dec ASC limit 1"
+                for row in try db.prepare(query3) {
                     if let row = row[0] {
                         colorName = String(describing: row)
                     }
