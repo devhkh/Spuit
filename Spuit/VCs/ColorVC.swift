@@ -26,6 +26,8 @@ class ColorVC: NSViewController {
                 colorFormatImageView.image = NSImage(named: "icn_ios")
             case .swift_NSColor:
                 colorFormatImageView.image = NSImage(named: "icn_macos")
+            case .dart:
+                colorFormatImageView.image = NSImage(named: "icn_dart")
             }
         }
     }

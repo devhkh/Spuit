@@ -149,7 +149,7 @@ extension DSFColorSampler: DSFColorSamplerDelegate {
         
         var colorName = "none"
         if let c = withColor {
-            colorName = DBManager.SI.getColorName(color: c)
+            colorName = DBManager.SI.getColorName(color: c).0
         }
         
 		self.selectionHandlerBlock?(withColor, colorName)
@@ -159,7 +159,7 @@ extension DSFColorSampler: DSFColorSamplerDelegate {
 	fileprivate func window(_: DSFColorSamplerWindow, moveToPoint _: CGPoint, withImage: NSImage, color: NSColor) {
 		self.locationChangedBlock?(withImage, color)
         
-        let colorName = DBManager.SI.getColorName(color: color)
+        let colorName = DBManager.SI.getColorName(color: color).0
         
         let r = String(format: "%.2f", color.redComponent)
         let g = String(format: "%.2f", color.greenComponent)

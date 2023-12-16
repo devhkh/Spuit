@@ -16,6 +16,7 @@ import Defaults
 enum ColorFormat: Int, CaseIterable, Defaults.Serializable {
     case swift_UIColor = 0
     case swift_NSColor
+    case dart
 //    case objc_UIColor
 //    case objc_NSColor
     
@@ -25,6 +26,8 @@ enum ColorFormat: Int, CaseIterable, Defaults.Serializable {
             return "Swift - UIColor"
         case .swift_NSColor:
             return "Swift - NSColor"
+        case .dart:
+            return "Dart"
 //        case .objc_UIColor:
 //            return "Objective-C - UIColor"
 //        case .objc_NSColor:

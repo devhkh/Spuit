@@ -80,17 +80,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let colorSampler = NSColorSampler()
         colorSampler.show { selectedColor in
             guard let c = selectedColor else { return }
-            let colorName = DBManager.SI.getColorName(color: c)
+            let data = DBManager.SI.getColorName(color: c)
+            let colorName = data.0
+            let hexColor = data.1
             let r = String(format: "%.2f", c.redComponent)
             let g = String(format: "%.2f", c.greenComponent)
             let b = String(format: "%.2f", c.blueComponent)
             let a = String(format: "%.2f", c.alphaComponent)
             
-            self.addColor(colorName: colorName, r: r, g: g, b: b, a: a, isAddHistory: true)
+            self.addColor(colorName: colorName, r: r, g: g, b: b, a: a, hexColor: hexColor, isAddHistory: true)
         }
     }
     
-    func addColor(colorName: String, r: String, g: String, b: String, a: String, isAddHistory: Bool) {
+    func addColor(colorName: String, r: String, g: String, b: String, a: String, 
+                  hexColor: String,
+                  isAddHistory: Bool) {
         var cName = String(colorName.filter { !" \n\t\r".contains($0) })
         cName = cName.firstLowercased
         
@@ -100,6 +104,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             codeString = "@nonobjc class var \(cName): NSColor { return NSColor(red: \(r), green: \(g), blue:\(b), alpha: \(a)) }"
         case .swift_UIColor:
             codeString = "@nonobjc class var \(cName): UIColor { return UIColor(red: \(r), green: \(g), blue:\(b), alpha: \(a)) }"
+        case .dart:
+            let rgbString = NSString(format:"0xFF%@", hexColor) as String
+            codeString = "static const Color \(cName) = Color(\(rgbString));"
         }
         
         let pasteBoard = NSPasteboard.general
@@ -154,6 +161,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     item.image = NSImage(named: "icn_ios")
                 case .swift_NSColor:
                     item.image = NSImage(named: "icn_macos")
+                case .dart:
+                    item.image = NSImage(named: "icn_dart")
                 }
                 let title = "\(historyColor[colorName])"
                 item.tag = historyColor[index]
@@ -171,6 +180,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         print(item.tag)
         let historyColors = Table("historyColors")
         let colorName = Expression<String>("colorName")
+        let hexColor = Expression<String>("hexColor")
         let index = Expression<Int>("index")
         let r = Expression<String>("r")
         let g = Expression<String>("g")
@@ -179,11 +189,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let historyColorsQuery = historyColors.where(index == item.tag)
         do {
             for historyColor in try DBManager.SI.db.prepare(historyColorsQuery) {
+                
                 addColor(colorName: historyColor[colorName],
                          r: historyColor[r],
                          g: historyColor[g],
                          b: historyColor[b],
                          a: historyColor[a],
+                         hexColor: historyColor[hexColor],
                          isAddHistory: false)
             }
         } catch {
@@ -202,3 +214,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 }
 
+extension String {
+
+  func CGFloatValue() -> CGFloat? {
+    guard let doubleValue = Double(self) else {
+      return nil
+    }
+
+    return CGFloat(doubleValue)
+  }
+}
