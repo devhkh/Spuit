@@ -8,6 +8,8 @@
 import Cocoa
 import SQLite
 
+typealias Expression = SQLite.Expression
+
 class DBManager: NSObject {
     
     static let SI = DBManager()
